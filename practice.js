@@ -1,39 +1,23 @@
-// person ={
-//     name: 'j',
-//     lName: 's',
-//     age: 25
-// }
+const http = require('http');
 
-// otherPerson = {
-//     name: 'q',
-//     lName: 'x',
-//     age: 25
-// }
-
-
-// const printName = ({ name, l }) => {
-//     console.log(name);
-// }
-
-
-// const { name, age } = person;
-
-
-// printName(person);
-// printName(otherPerson);
-
-const p = new Promise((resolve, reject) => {
-    let a = 1 + 3;
-
-    if(a == 2){
-        resolve("Success");
-    } else {
-        reject("Fail");
+const server = http.createServer((req, res) => {
+    const url = req.url;
+    if(url === '/'){
+        res.setHeader('Content-Type', 'test/html');
+        res.write('<html>');
+        res.write('<head><title>My first page</title></head>');
+        res.write('<body><form method="POST" action="/message"><input type="text" name="message"><button type="sumit">Submit</button> </form></body>');
+        res.write('</html>');
+        return res.end();
     }
+
+    if(url === '/message' && method === 'POST') {
+        fs.writeFileSync('message.txt', 'DUMMY TEXT');
+        res.statusCode = 302;
+        res.setHeader('Location', '/');
+        return res.end();
+    }
+
 });
 
-p.then((message) => {
-    console.log("This is in the " + message);
-}).catch((message) => {
-    console.log("This is in the " + message);
-});
+server.listen(3000);
