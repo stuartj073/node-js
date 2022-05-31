@@ -1,6 +1,6 @@
 const { builtinModules } = require("module");
 
-const fs = rquire('fs');
+const fs = require('fs');
 
 
 const requestHandler = (req, res) => {
@@ -21,7 +21,7 @@ const requestHandler = (req, res) => {
     }
 
     if(url === '/message' && method === 'POST') {
-        fs.writeFileSync('message.txt', 'DUMMY');
+        fs.writeFileSync('message.txt', message);
         // res.writeHead(302, {});
         res.statusCode = 302;
         res.setHeader('Location', '/');
