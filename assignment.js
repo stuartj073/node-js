@@ -68,3 +68,26 @@ const requestHandler = (res, req) => {
 }
 
 server.listen(3000);
+
+
+const http = require('http');
+
+
+const server = http.createServer((res, req) => {
+    const url = req.url;
+
+    if(url === '/'){
+        res.setHeader('Content-type', 'text/html');
+
+        res.write('<html><title><bdoy><section><form caction="create-user" method="POST"><input type="text"> <button type="submit">Create user</button></form></section></bdoy></title></html>')
+        return res.end();
+    }
+
+    if(url === '/users') {
+
+    }
+
+    if(url === '/create-user') {
+        const body = [];
+    }
+})
