@@ -1,0 +1,20 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "Node.js guide",
+  "main": "assignment.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stuartj073/node-js.git"
+  },
+  "author": "James",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stuartj073/node-js/issues"
+  },
+  "homepage": "https://github.com/stuartj073/node-js#readme"
+}

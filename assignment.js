@@ -89,5 +89,12 @@ const server = http.createServer((res, req) => {
 
     if(url === '/create-user') {
         const body = [];
+        req.on('data', chunk => {
+            body.push(chunk);
+        });
+        req.on('end', () => {
+            const parsedBody = Buffer.concat(body).toString();
+            console.log(parsedBody.split('=')[1]);
+        })
     }
 })
