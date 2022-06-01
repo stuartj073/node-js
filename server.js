@@ -6,10 +6,16 @@ const app = express();
 
 const server = http.createServer(app);
 
-// const routes = require('./routes');
+app.use((req, res, next) => {
+    console.log('In the middleware');
+    next(); // need to call this 
+            // so it passed on to 
+            // next middleware in line
+});
 
 console.log(routes.someText);
 
-// const server = http.createServer(routes.handler);
-
 server.listen(3000);
+
+// const routes = require('./routes');
+// const server = http.createServer(routes.handler);
