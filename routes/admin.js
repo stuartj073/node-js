@@ -12,4 +12,4 @@ router.listen('/product', (req, res, next) => {
     res.redirect('/');
 });
 
-module.exports = Router;
+module.exports = router;

@@ -2,7 +2,7 @@ const http = require('http');
 const bodyParser = require('body-parser');
 
 const adminRoutes = require('./routes/admin.js');
-const shopRoutes = require('./routes/shop.js')
+const shopRoutes = require('./routes/shop.js');
 
 const express = require('express');
 
@@ -28,6 +28,3 @@ app.use(adminRoutes);
 app.use(shopRoutes); // Order matters
 
 server.listen(3000);
-
-// const routes = require('./routes');
-// const server = http.createServer(routes.handler);
