@@ -2,12 +2,19 @@ const express = require('express');
 
 const router = express.Router(); // mini express app
 
+
+// /admin/add-product => GET
 router.get('/add-product', (req, res, next) => {
     console.log('In another middleware!');
-    res.send('<form action="/product" method="POST"><input type="text" name="title"><button type="submit">Submit product</button></form>')
+    res.send('<form action="/admin/add-product" method="POST"><input type="text" name="title"><button type="submit">Submit product</button></form>')
 });
 
-router.listen('/product', (req, res, next) => {
+// THERE CAN BE TWO /admin/add-product ROUTES
+// FOR TWO DIFFERENT ROUTER URLS, IF THEY
+// HAVE DIFFERENT ACTIONS (GET, POST)
+
+// /admin/add-product => POST
+router.post('/add-product', (req, res, next) => {
     console.log(req.body);
     res.redirect('/');
 });
